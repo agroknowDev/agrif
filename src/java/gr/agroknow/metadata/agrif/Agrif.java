@@ -3,7 +3,7 @@ package gr.agroknow.metadata.agrif ;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-class Agrif
+public class Agrif
 {
 	public JSONObject agrif ;
 	public JSONArray creators ;
