@@ -13,6 +13,18 @@ public class Item
 	}
 	
 	@SuppressWarnings("unchecked")
+	public void setPhysicalLocation( String location )
+	{
+		item.put( "location", location ) ;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void setPhysicalNumber( String number )
+	{
+		item.put( "number", number ) ;
+	}
+	
+	@SuppressWarnings("unchecked")
 	public void setPhysicalItem( String location, String number )
 	{
 		item.put( "location", location ) ;

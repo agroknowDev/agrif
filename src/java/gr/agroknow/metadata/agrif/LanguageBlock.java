@@ -128,17 +128,28 @@ public class LanguageBlock
 	}
 	
 	@SuppressWarnings("unchecked")
-	public void setNotes( String language, String notes )
+	public void setNotes( String language, String note )
 	{
 		JSONObject block ;
+		JSONArray notes ;
 		if ( blocks.containsKey( language ) )
 		{
 			block = (JSONObject)blocks.get( language ) ;
+			if ( block.containsKey( "notes" ) )
+			{
+				notes = (JSONArray)block.get( "notes" ) ;
+			}
+			else
+			{
+				notes = new JSONArray() ;
+			}
 		}
 		else
 		{
 			block = new JSONObject() ;
+			notes = new JSONArray() ;
 		}
+		notes.add( note ) ;
 		block.put( "notes", notes ) ;
 		blocks.put( language, block ) ;
 	}

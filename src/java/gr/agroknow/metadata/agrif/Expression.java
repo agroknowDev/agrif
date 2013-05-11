@@ -64,9 +64,9 @@ public class Expression
 	@SuppressWarnings("unchecked")
 	public void setDateIssued( String date )
 	{
+		JSONArray publishers = new JSONArray() ;
 		if ( expression.containsKey( "publisher" ) )
 		{
-			JSONArray publishers = new JSONArray() ;
 			JSONArray oldpublishers = (JSONArray)expression.get( "publisher" ) ;
 			for (Object pub: oldpublishers)
 			{
@@ -74,8 +74,14 @@ public class Expression
 				publisher.put( "date", date ) ;
 				publishers.add( publisher ) ;
 			}
-			expression.put( "publisher" , publishers ) ;
 		}
+		else
+		{
+			JSONObject publisher = new JSONObject() ;
+			publisher.put( "date", date ) ;
+			publishers.add( publisher ) ;
+		}
+		expression.put( "publisher" , publishers ) ;
 	}
 	
 	@SuppressWarnings("unchecked")

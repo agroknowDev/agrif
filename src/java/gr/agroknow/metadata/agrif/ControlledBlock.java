@@ -30,7 +30,7 @@ public class ControlledBlock
 	}
 	
 	@SuppressWarnings("unchecked")
-	public void setType( String type )
+	public void setType( String source, String value )
 	{
 		JSONArray types ;
 		if ( controlled.containsKey( "type" ) )
@@ -41,8 +41,11 @@ public class ControlledBlock
 		{
 			types = new JSONArray() ;
 		}
+		JSONObject type = new JSONObject() ;
+		type.put( "source", source ) ;
+		type.put( "value", value ) ;
 		types.add( type ) ;
-		controlled.put( "type", types ) ;
+		controlled.put( "type", types ) ;		
 	}
 	
 	@SuppressWarnings("unchecked")
