@@ -61,11 +61,7 @@
     
     <target name="package"  depends="build">
 		<jar	destfile="${dist.dir}/${appname}.jar" 
-				basedir="${build.dir}" >			
-			<manifest>
-				<attribute name="Main-Class" value="gr.agroknow.metadata.transformer.agris2akif.Main" />
-				<attribute name="Class-Path" value="./lib/commons-io-2.4.jar ./lib/json-simple-1.1.1.jar ./lib/zettatoolbox.jar ./lib/langdetect.jar ./lib/jsonic-1.3.0.jar" />  
-			</manifest>
+				basedir="${build.dir}" >
 		</jar>
     </target>
 
