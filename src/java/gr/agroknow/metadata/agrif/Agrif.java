@@ -142,7 +142,7 @@ public class Agrif
 		}
 		if ( !expressions.isEmpty() )
 		{
-			agrif.put( "expression", expressions ) ;
+			agrif.put( "expressions", expressions ) ;
 		}
 	}
 }
