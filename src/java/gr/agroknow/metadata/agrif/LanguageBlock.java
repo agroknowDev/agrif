@@ -11,7 +11,7 @@ public class LanguageBlock
 	{
 		blocks = new JSONObject() ;
 	}
-	
+		
 	@SuppressWarnings("unchecked")
 	public void setTitle( String language, String title )
 	{
@@ -27,6 +27,20 @@ public class LanguageBlock
 		block.put( "title", title ) ;
 		blocks.put( language, block ) ;
 	}
+	
+	public boolean hasTitle( String language )
+	{
+		if ( !blocks.containsKey( language ) )
+		{
+			return false ;
+		}
+		else
+		{
+			JSONObject block = (JSONObject)blocks.get( language ) ;
+			return block.containsKey( "title" ) ;
+		}
+	}
+	
 	
 	@SuppressWarnings("unchecked")
 	public void setAlternativeTitle( String language, String alttitle )

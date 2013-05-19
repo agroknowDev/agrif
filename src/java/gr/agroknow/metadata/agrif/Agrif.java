@@ -88,7 +88,17 @@ public class Agrif
 	@SuppressWarnings("unchecked")
 	public void setLanguageBlocks( LanguageBlock lblock )
 	{
-		agrif.putAll( lblock.toJSONObject() ) ;
+		JSONObject languageBlocks ; 
+		if ( agrif.containsKey( "languageBlocks" ) )
+		{
+			languageBlocks = (JSONObject)agrif.get( "languageBlocks" ) ;
+		}
+		else
+		{
+			languageBlocks = new JSONObject() ;
+		}
+		languageBlocks.putAll( lblock.toJSONObject() ) ;
+		agrif.put( "languageBlocks", languageBlocks ) ;
 	}
 	
 	@SuppressWarnings("unchecked")
