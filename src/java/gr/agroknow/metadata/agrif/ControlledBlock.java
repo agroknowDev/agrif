@@ -85,6 +85,15 @@ public class ControlledBlock
 		tcoverages.add( tcoverage ) ;
 		controlled.put( "temporalCoverage", tcoverages ) ;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public void setReviewStatus( String source, String value )
+	{
+		JSONObject status = new JSONObject() ;
+		status.put( "source", source ) ;
+		status.put( "value", value ) ;
+		controlled.put( "reviewStatus", status ) ;
+	}
 		
 	public JSONObject toJSONObject()
 	{

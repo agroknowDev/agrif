@@ -132,7 +132,14 @@ public class Expression
 		expression.put( "descriptionEdition" , descriptionEditions ) ;
 	}
 	
-	
+	@SuppressWarnings("unchecked")
+	public void setPublicationStatus( String source, String value )
+	{
+		JSONObject status = new JSONObject() ;
+		status.put( "source", source ) ;
+		status.put( "value", value ) ;
+		expression.put( "publicationStatus", status ) ;
+	}
 	
 	public JSONObject toJSONObject()
 	{
