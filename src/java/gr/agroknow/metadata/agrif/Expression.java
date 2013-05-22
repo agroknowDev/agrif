@@ -85,6 +85,22 @@ public class Expression
 	}
 	
 	@SuppressWarnings("unchecked")
+	public void setPublisher( Publisher publisher )
+	{
+		JSONArray publishers ;
+		if ( expression.containsKey( "publisher" ) )
+		{
+			publishers = (JSONArray)expression.get( "publisher" ) ;
+		}
+		else
+		{
+			publishers = new JSONArray() ;
+		}
+		publishers.add( publisher.toJSONObject() ) ;
+		expression.put( "publisher" , publishers ) ;
+	}
+	
+	@SuppressWarnings("unchecked")
 	public void setPublisher( String name, String date, String location )
 	{
 		JSONArray publishers ;
