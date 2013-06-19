@@ -133,6 +133,22 @@ public class Expression
 	}	
 	
 	@SuppressWarnings("unchecked")
+	public void setFullCitation( String fullCitation )
+	{
+		JSONArray fullCitations ;
+		if ( expression.containsKey( "fullCitation" ) )
+		{
+			fullCitations = (JSONArray)expression.get( "fullCitation" ) ;
+		}
+		else
+		{
+			fullCitations = new JSONArray() ;
+		}
+		fullCitations.add( fullCitation ) ;
+		expression.put( "descriptionEdition" , fullCitations ) ;
+	}
+	
+	@SuppressWarnings("unchecked")
 	public void setDescriptionEdition( String descriptionEdition )
 	{
 		JSONArray descriptionEditions ;
@@ -147,6 +163,7 @@ public class Expression
 		descriptionEditions.add( descriptionEdition ) ;
 		expression.put( "descriptionEdition" , descriptionEditions ) ;
 	}
+	
 	
 	@SuppressWarnings("unchecked")
 	public void setPublicationStatus( String source, String value )
