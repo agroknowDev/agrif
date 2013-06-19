@@ -145,7 +145,7 @@ public class Expression
 			fullCitations = new JSONArray() ;
 		}
 		fullCitations.add( fullCitation ) ;
-		expression.put( "descriptionEdition" , fullCitations ) ;
+		expression.put( "fullCitation" , fullCitations ) ;
 	}
 	
 	@SuppressWarnings("unchecked")
