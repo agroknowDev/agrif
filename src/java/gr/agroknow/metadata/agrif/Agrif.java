@@ -130,7 +130,7 @@ public class Agrif
 	{
 		if ( !creators.isEmpty() )
 		{
-			agrif.put( "creator" , creators ) ;
+			agrif.put( "creators" , creators ) ;
 		}
 		if ( !rights.isEmpty() )
 		{

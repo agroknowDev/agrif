@@ -16,7 +16,8 @@ public class ControlledBlock
 	@SuppressWarnings("unchecked")
 	public void setDescriptor( String thesaurus, String descriptor )
 	{
-		JSONArray descriptors ;
+	/* Changed on 14/03/15
+         * JSONArray descriptors ;
 		if ( controlled.containsKey( thesaurus ) )
 		{
 			descriptors = (JSONArray) controlled.get( thesaurus ) ;
@@ -26,7 +27,19 @@ public class ControlledBlock
 			descriptors = new JSONArray() ;
 		}
 		descriptors.add( descriptor ) ;
-		controlled.put( thesaurus, descriptors ) ;
+		controlled.put( thesaurus, descriptors ) ;*/
+            
+            JSONObject block;
+            if ( controlled.containsKey( "classification" ) )
+		{
+			block = (JSONObject)controlled.get( "classification" ) ;
+		}
+		else
+		{
+			block = new JSONObject() ;
+		}
+            block.put( thesaurus,descriptor) ;
+		controlled.put("classification" ,block ) ;
 	}
 	
 	@SuppressWarnings("unchecked")

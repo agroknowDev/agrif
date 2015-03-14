@@ -105,9 +105,9 @@ public class LanguageBlock
 		if ( blocks.containsKey( language ) )
 		{
 			block = (JSONObject)blocks.get( language ) ;
-			if ( block.containsKey( "keyword" ) )
+			if ( block.containsKey( "keywords" ) )
 			{
-				keywords = (JSONArray)block.get( "keyword" ) ;
+				keywords = (JSONArray)block.get( "keywords" ) ;
 			}
 			else
 			{
@@ -120,7 +120,7 @@ public class LanguageBlock
 			keywords = new JSONArray() ;
 		}
 		keywords.add( keyword ) ;
-		block.put( "keyword", keywords ) ;
+		block.put( "keywords", keywords ) ;
 		blocks.put( language, block ) ;
 	}
 	

@@ -48,7 +48,7 @@ public class Manifestation
 	@SuppressWarnings("unchecked")
 	public void setFormat( String format )
 	{
-		JSONArray formats ;
+		/*JSONArray formats ;
 		if ( manifestation.containsKey( "format" ) )
 		{
 			formats = (JSONArray)manifestation.get( "format" ) ;
@@ -58,7 +58,8 @@ public class Manifestation
 			formats = new JSONArray() ;
 		}
 		formats.add( format ) ;
-		manifestation.put( "format" , formats ) ;
+		manifestation.put( "format" , formats ) ;*/
+            manifestation.put( "format", format ) ;
 	}
 	
 	@SuppressWarnings("unchecked")
